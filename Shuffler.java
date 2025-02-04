@@ -1,5 +1,3 @@
-package CardGame;
-
 import java.util.Random;
 
 public class Shuffler {

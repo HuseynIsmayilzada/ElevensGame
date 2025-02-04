@@ -1,5 +1,3 @@
-package CardGame;
-
 import java.awt.Point;
 import java.awt.Graphics;
 import java.awt.Dimension;
@@ -165,14 +163,15 @@ public class CardGameGUI extends JFrame implements ActionListener {
 
         // If board object's class name follows the standard format
         // of ...CardGame.Board or ...board, use the prefix for the JFrame title
+
+
         String className = board.getClass().getSimpleName();
+
         int classNameLen = className.length();
         int boardLen = "CardGame.Board".length();
-        String boardStr = className.substring(classNameLen - boardLen);
-        if (boardStr.equals("CardGame.Board") || boardStr.equals("board")) {
-            int titleLength = classNameLen - boardLen;
-            setTitle(className.substring(0, titleLength));
-        }
+
+        String title = className.replace("Board", ""); // Removes "Board" from the class name
+        setTitle(title);
 
         // Calculate number of rows of CardGame.cards (5 CardGame.cards per row)
         // and adjust JFrame height if necessary
@@ -287,7 +286,7 @@ public class CardGameGUI extends JFrame implements ActionListener {
             List<Integer> selection = new ArrayList<Integer>();
             for (int k = 0; k < board.size(); k++) {
                 if (selections[k]) {
-                    selection.add(new Integer(k));
+                    selection.add(k);
                 }
             }
             // Make sure that the selected CardGame.cards represent a legal replacement.

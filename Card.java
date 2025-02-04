@@ -1,5 +1,3 @@
-package CardGame;
-
 /**
  * CardGame.Card.java
  *
