@@ -1,7 +1,7 @@
 /**
- * CardGame.Card.java
+ * Card.java
  *
- * <code>CardGame.Card</code> represents a playing card.
+ * <code>Card</code> represents a playing card.
  */
 public class Card {
 
@@ -22,7 +22,7 @@ public class Card {
 
 
     /**
-     * Creates a new <code>CardGame.Card</code> instance.
+     * Creates a new <code>Card</code> instance.
      *
      * @param cardRank  a <code>String</code> value
      *                  containing the rank of the card
@@ -32,34 +32,38 @@ public class Card {
      *                  containing the point value of the card
      */
     public Card(String cardRank, String cardSuit, int cardPointValue) {
-        this.rank = cardRank;
-        this.suit = cardSuit;
-        this.pointValue = cardPointValue;
+        rank = cardRank;
+        suit = cardSuit;
+        pointValue = cardPointValue;
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
     }
 
 
     /**
-     * Accesses this <code>CardGame.Card's</code> suit.
-     * @return this <code>CardGame.Card's</code> suit.
+     * Accesses this <code>Card's</code> suit.
+     * @return this <code>Card's</code> suit.
      */
     public String suit() {
-        return this.suit;
+        return suit;
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
     }
 
     /**
-     * Accesses this <code>CardGame.Card's</code> rank.
-     * @return this <code>CardGame.Card's</code> rank.
+     * Accesses this <code>Card's</code> rank.
+     * @return this <code>Card's</code> rank.
      */
     public String rank() {
-        return this.rank;
+        return rank;
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
     }
 
     /**
-     * Accesses this <code>CardGame.Card's</code> point value.
-     * @return this <code>CardGame.Card's</code> point value.
+     * Accesses this <code>Card's</code> point value.
+     * @return this <code>Card's</code> point value.
      */
     public int pointValue() {
-        return this.pointValue;
+        return pointValue;
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
     }
 
     /** Compare this card with the argument.
@@ -69,16 +73,18 @@ public class Card {
      *         false otherwise.
      */
     public boolean matches(Card otherCard) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-        if (this.suit.equals(otherCard.suit()) && this.rank.equals(otherCard.rank()) && this.pointValue == otherCard.pointValue()) return true;
+        if(pointValue == otherCard.pointValue() && rank.equals(otherCard.rank()) && suit.equals(otherCard.suit()) ) {
+            return true;
+        }
         return false;
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
     }
 
     /**
      * Converts the rank, suit, and point value into a string in the format
      *     "[Rank] of [Suit] (point value = [PointValue])".
      * This provides a useful way of printing the contents
-     * of a <code>CardGame.Deck</code> in an easily readable format or performing
+     * of a <code>Deck</code> in an easily readable format or performing
      * other similar functions.
      *
      * @return a <code>String</code> containing the rank, suit,
@@ -86,8 +92,6 @@ public class Card {
      */
     @Override
     public String toString() {
-        return this.rank + " of " + suit + " (point value = " + this.pointValue + ")";
+        return("[" + rank + "] of [" + suit + "] (point value = [" + pointValue + "])" );
     }
 }
-
-
